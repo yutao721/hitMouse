@@ -1,2 +1,4 @@
-# hitMouse
-layabox TS版本打地鼠
+# layabox TS版本打地鼠
+
+### 第一个版本
+- 完成简单打地鼠逻辑
