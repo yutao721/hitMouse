@@ -1,0 +1,1 @@
+{"type":"Image","props":{"y":0,"x":0,"var":"prefabMouse","skin":"res/mouse_normal_1.png","presetID":1,"name":"prefabMouse","isPresetRoot":true,"anchorY":1,"anchorX":0.5},"compId":25,"child":[{"type":"Script","props":{"presetID":2,"runtime":"game/Mouse.ts"},"compId":26}],"loadList":["res/mouse_normal_1.png"],"loadList3D":[]}

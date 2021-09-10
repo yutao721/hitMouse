@@ -1,0 +1,1 @@
+{"type":"Image","props":{"skin":"res/score_100_1.png","name":"ScoreFloat","presetID":1,"isPresetRoot":true,"x":0,"y":0},"compId":47,"child":[{"type":"Script","props":{"presetID":2,"runtime":"game/ScoreFloat.ts"},"compId":48}],"loadList":["res/score_100_1.png"],"loadList3D":[]}
