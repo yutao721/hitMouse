@@ -265,7 +265,9 @@
         }
     }
 
-    console.log(1);
+    var Text = Laya.Text;
+    var Tween = Laya.Tween;
+    var Ease = Laya.Ease;
     class StartViewUI extends ui.startViewUI {
         constructor() {
             super();
@@ -273,10 +275,30 @@
         }
         onEnable() {
             this.startGame.on(Laya.Event.CLICK, this, this.start);
+            var w = 480;
+            var offset = Laya.stage.width - w >> 1;
+            console.log(offset);
+            var endY = Laya.stage.height / 2 - 180;
+            var demoString = "打地鼠";
+            for (var i = 0, len = demoString.length; i < len; ++i) {
+                var letterText = this.createLetter(demoString.charAt(i));
+                letterText.x = w / len * i + offset;
+                Tween.to(letterText, { y: endY }, 1000, Ease.elasticOut, null, i * 1000);
+            }
         }
         start() {
             this.removeSelf();
             Laya.stage.addChild(this.gameView);
+        }
+        createLetter(char) {
+            var letter = new Text();
+            letter.text = char;
+            letter.color = "#1b7518";
+            letter.font = "Impact";
+            letter.fontSize = 100;
+            letter.bold = true;
+            Laya.stage.addChild(letter);
+            return letter;
         }
         onAwake() {
         }
