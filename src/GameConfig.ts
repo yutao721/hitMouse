@@ -9,12 +9,12 @@ import ScoreFloat from "./game/ScoreFloat"
 * 游戏初始化配置;
 */
 export default class GameConfig{
-    static width:number=960;
-    static height:number=640;
+    static width:number=1334;
+    static height:number=750;
     static scaleMode:string="fixedheight";
     static screenMode:string="horizontal";
-    static alignV:string="middle";
-    static alignH:string="center";
+    static alignV:string="top";
+    static alignH:string="left";
     static startScene:any="startView.scene";
     static sceneRoot:string="";
     static debug:boolean=false;

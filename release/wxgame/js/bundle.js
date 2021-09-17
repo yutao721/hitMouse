@@ -317,12 +317,12 @@
             reg("game/ScoreFloat.ts", ScoreFloat);
         }
     }
-    GameConfig$1.width = 1334;
-    GameConfig$1.height = 750;
+    GameConfig$1.width = 960;
+    GameConfig$1.height = 640;
     GameConfig$1.scaleMode = "fixedheight";
     GameConfig$1.screenMode = "horizontal";
-    GameConfig$1.alignV = "top";
-    GameConfig$1.alignH = "left";
+    GameConfig$1.alignV = "middle";
+    GameConfig$1.alignH = "center";
     GameConfig$1.startScene = "startView.scene";
     GameConfig$1.sceneRoot = "";
     GameConfig$1.debug = false;
