@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":100,"height":100},"compId":2,"child":[{"type":"Sprite","props":{"y":0,"x":4,"var":"tuzi","texture":"res/mouse_hited_1.png"},"compId":3}],"loadList":["res/mouse_hited_1.png"],"loadList3D":[]}
