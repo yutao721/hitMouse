@@ -134,7 +134,7 @@
         constructor() {
             super();
             this.arrMouse = [];
-            this.nCountDown = 0;
+            this.nCountDown = Laya.LocalStorage.getItem('nCountDown');
             this.isPlaying = false;
             this.nScore = 0;
             this.prefabMouse = null;
@@ -145,7 +145,7 @@
         }
         startGame() {
             this.isPlaying = true;
-            this.nCountDown = 5;
+            this.nCountDown = Laya.LocalStorage.getItem('nCountDown');
             this.nScore = 0;
             this.arrMouse.length = 0;
             for (let i = 0; i < 9; i++) {
@@ -268,9 +268,11 @@
     var Text = Laya.Text;
     var Tween = Laya.Tween;
     var Ease = Laya.Ease;
+    var Handler = Laya.Handler;
     class StartViewUI extends ui.startViewUI {
         constructor() {
             super();
+            this.skin = 'comp/combobox.png';
             this.gameView = new GameUI();
         }
         onEnable() {
@@ -285,6 +287,21 @@
                 letterText.x = w / len * i + offset;
                 Tween.to(letterText, { y: endY }, 1000, Ease.elasticOut, null, i * 1000);
             }
+            this.createComboBox();
+        }
+        createComboBox() {
+            this.comboBox.labelSize = 36;
+            this.comboBox.itemSize = 36;
+            this.comboBox.labels = "5,10,15,20,25,30";
+            this.comboBox.labelPadding = '10, 10 ,10 ,10';
+            this.comboBox.selectedLabel = '15';
+            Laya.LocalStorage.setItem('nCountDown', '15');
+            this.comboBox.selectHandler = new Handler(this, this.onSelect, [this.comboBox]);
+        }
+        onSelect(cb) {
+            console.log("选中了： " + cb.selectedLabel);
+            console.log(this.comboBox.list);
+            Laya.LocalStorage.setItem('nCountDown', cb.selectedLabel);
         }
         start() {
             this.removeSelf();
@@ -297,7 +314,7 @@
             letter.font = "Impact";
             letter.fontSize = 100;
             letter.bold = true;
-            Laya.stage.addChild(letter);
+            this.addChild(letter);
             return letter;
         }
         onAwake() {
