@@ -21,7 +21,7 @@ export default class GameManager extends Laya.Script {
   constructor() {
     super();
     this.arrMouse = [];
-    this.nCountDown = 0;
+    this.nCountDown = Laya.LocalStorage.getItem('nCountDown')
     this.isPlaying = false;
     this.nScore = 0;
     this.prefabMouse = null;
@@ -36,7 +36,7 @@ export default class GameManager extends Laya.Script {
   // 游戏开始
   startGame(): void {
     this.isPlaying = true;
-    this.nCountDown = 5;
+    this.nCountDown = Laya.LocalStorage.getItem('nCountDown');
     this.nScore = 0;
     this.arrMouse.length = 0;
     for (let i = 0; i < 9; i++) {

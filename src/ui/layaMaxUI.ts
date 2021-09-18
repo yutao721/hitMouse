@@ -24,6 +24,7 @@ export module ui {
     REG("ui.gameSceneUI",gameSceneUI);
     export class startViewUI extends Scene {
 		public startGame:Laya.Button;
+		public comboBox:Laya.ComboBox;
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
